@@ -7,7 +7,7 @@ jobs:
    - name: Check out repository code
      uses: actions/checkout@v2
    - name: Run Scrips to test
-     run: pip3 install -r {{ github.workspace }}/requirements.txt
-   - run: python3 {{ github.workspace }}/manage.py migrate
-   - run: python3 {{ github.workspace }}/manage.py collectstatic
-   - run: python3 {{ github.workspace }}/manage.py test
+     run: pip3 install -r  ./django-locallibrary-tutorial/requirements.txt
+   - run: python3  ./django-locallibrary-tutorial/manage.py migrate
+   - run: python3  ./django-locallibrary-tutorial/manage.py collectstatic
+   - run: python3  ./django-locallibrary-tutorial/manage.py test
