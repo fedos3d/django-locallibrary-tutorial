@@ -1,0 +1,8 @@
+FROM python:3
+COPY . ./app
+WORKDIR ./app
+RUN pip install --upgrade pip 
+RUN pip3 install -r requirements.txt && python3 manage.py makemigrations && python3 manage.py migrate
+RUN python manage.py runserver 0.0.0.0:8000 &
+CMD gunicorn locallibrary.wsgi:application --bind 0.0.0.0:8000
+

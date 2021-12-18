@@ -1,0 +1,12 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Check out repository code
+     uses: actions/checkout@v2
+   - name: Run Scrips to test
+     run: pip3 install -r {{ github.workspace }}/requirements.txt
+   - run: python3 {{ github.workspace }}/manage.py migrate
+   - run: python3 {{ github.workspace }}/manage.py collectstatic
+   - run: python3 {{ github.workspace }}/manage.py test
