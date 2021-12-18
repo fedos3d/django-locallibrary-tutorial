@@ -1,6 +1,7 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
+  JOB_TO_TEST_PYTHON
   runs-on: ubuntu-latest
   steps:
    - name: Check out repository code
