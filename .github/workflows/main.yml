@@ -8,11 +8,7 @@ jobs:
      uses: actions/checkout@v2
    - run: ls -la
    - name: Run Scrips to test
-     working-directory: ./django-locallibrary-tutorial
      run: pip3 install -r requirements.txt
    - run: python3 manage.py migrate
-     working-directory: ./django-locallibrary-tutorial
    - run: python3 manage.py collectstatic
-     working-directory: ./django-locallibrary-tutorial
    - run: python3 manage.py test
-     working-directory: ./django-locallibrary-tutorial
